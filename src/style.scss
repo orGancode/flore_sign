@@ -1,0 +1,27 @@
+@import './theme/color.scss';
+@import './templates/login/view.scss';
+@import './templates/welcome/view.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  background: $color-primary;
+  color: $color-text;
+}
+
+@media all and (min-width: 376px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media all and (max-width: 375px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media all and (max-width: 320px) {
+  html {
+    font-size: 16px;
+  }
+}

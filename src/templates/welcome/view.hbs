@@ -1,0 +1,15 @@
+<div class="welcome-view">
+  <p class="head">课程列表</p>
+  <div class="body">
+    {{#if DATA.length}}
+      {{#each DATA}}
+        <a href='{{this.[3]}}'>{{this.[1]}}</a>
+      {{/each}}
+    {{else}}
+        暂无课程
+    {{/if}}
+  </div>
+  <div class="footer">
+    <button class="js-login">登录</button>
+  </div>
+</div>
