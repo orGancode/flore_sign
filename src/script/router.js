@@ -1,6 +1,7 @@
 const login = require('../templates/login/view.hbs');
 const welcome = require('../templates/welcome/view.hbs');
 const getResource = require('./getResource');
+const Cookie = require('./cookie');
 
 const {
   Login,
@@ -13,6 +14,13 @@ const renderHtmlJs = (templates, JsObj) => {
   const jsobj = new JsObj({ router });
 }
 
+const getUserBaseInfo = () => {
+  return {
+    isLogin: !!Cookie.get('remember_token'),
+    userName: unescape(Cookie.get('username'))
+  }
+}
+
 const router = (route) => {
   window.location.hash = route;
   getResource(route || 'welcome').then((data, JsObj) => {
@@ -21,7 +29,7 @@ const router = (route) => {
         renderHtmlJs(login({ DATA: data }), Login)
         break;
       default:
-        renderHtmlJs(welcome({ DATA: data }), Welcome)
+        renderHtmlJs(welcome({ DATA: data, USER: getUserBaseInfo() }), Welcome)
     }
   })
   .catch((error) => {

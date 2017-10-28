@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 0;
-  background: $color-primary;
+  background: #faf4eb;
   color: $color-text;
 }
 
@@ -23,5 +23,102 @@ body {
 @media all and (max-width: 320px) {
   html {
     font-size: 16px;
+  }
+}
+
+.btn {
+  padding: 0;
+  border: 0;
+  min-height: 1rem;
+  line-height: 1rem;
+  min-width: 3rem;
+  background: white;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  &:hover {
+    border-color: #ccc;
+    background: #dfdfdf;
+  }
+}
+.btn-primary {
+  color: white;
+  background: rgb(121, 121, 227);
+  border: none;
+  &:hover {
+    border-color: #ccc;
+    background: rgb(104, 104, 214);;
+  }
+}
+
+
+a {
+  text-decoration: none;
+}
+p, h1, h2, h3, h4, h5 {
+  margin: 0,
+}
+
+button {
+  outline: none;
+}
+
+.modal-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(0,0,0,0.3);
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -7.5rem;
+    margin-top: -3rem;
+    display: inline-block;
+    min-width: 15rem;
+    background: white;
+    color: #333;
+  }
+  .modal-head {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    .icon-success {
+      color: rgb(8, 201, 8);
+    }
+    .icon-warning {
+      color: rgb(234, 241, 41);
+    }
+    .icon-info {
+      color: rgb(63, 156, 242);
+    }
+    .icon-failure {
+      color: rgb(229, 26, 26);
+    }
+    h3 {
+      font-weight: normal;
+      i {
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+      }
+      font-size: 0.7rem;
+    }
+  }
+  .modal-body {
+    padding: 0.5rem;
+    min-height: 2rem;
+    p {
+      font-size: 0.6rem;
+    }
+  }
+  .modal-foot {
+    border-top: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: right;
+    button {
+      margin-left: 0.5rem;
+    }
   }
 }

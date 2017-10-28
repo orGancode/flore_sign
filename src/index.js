@@ -1,4 +1,6 @@
 import './style.scss';
+import './vender/ajax';
+import './vender/formSerialize';
 
 const router = require('./script/router');
 const checkHash = require('./script/checkHash');

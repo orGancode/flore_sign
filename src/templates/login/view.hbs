@@ -1,5 +1,16 @@
-<div>{{#if a}}a:login{{else}}menud{{/if}}{{DATA.total}}</div>
-<div>
-
+<div class="login-view">
+  <div class="head"></div>
+  <form class="login-form">
+    <div class="input-group">
+      <label for="">用户名</label>
+      <input type="text" name="user_name" required>
+    </div>
+    <div class="input-group">
+       <label for="">密码</label>
+      <input type="password" name="password" required>
+    </div>
+    <div class="input-group">
+      <input type="submit" value="登录">
+    </div>
+  </form>
 </div>
-<p class="back">返回</p>

@@ -8,9 +8,6 @@ module.exports = (route) => {
         url: resource[route].url,
         success: (data) => {
           resolve(data)
-        },
-        error: (error) => {
-          reject(error);
         }
       });
     } else {

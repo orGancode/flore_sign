@@ -1,4 +1,4 @@
-
+const Cookie = require('../../script/cookie')
 class Login {
   constructor(prop) {
     this.router = prop.router;
@@ -6,9 +6,24 @@ class Login {
   }
 
   bindEvents() {
-    $('.back').on('click', e => {
-      this.router('');
-    });
+    $('.login-form').on('submit', e => this.submitLogin(e));
+  }
+
+  submitLogin(e) {
+    e.preventDefault();
+    const data = $(e.currentTarget).serializeJson();
+    $.ajax({
+      url: '/api/auth/login',
+      data: JSON.stringify(data),
+      method: 'post',
+      success: (res) => {
+        if (res.code === 1) {
+          Cookie.set('username', res.user_name, 30, document.domain);
+        } else {
+          alert(res.msg);
+        }
+      },
+    })
   }
 }
 

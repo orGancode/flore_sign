@@ -1,15 +1,38 @@
 <div class="welcome-view">
-  <p class="head">课程列表</p>
+  <div class="head">
+    <div class="left">
+      <h3>FLORE</h3>
+      <h4>弗洛法式甜点教室</h4>
+    </div>
+    <div class="right">
+      {{#if USER.isLogin}}
+        <a class="nav js-logout" href="javascript:;">退出</a>
+        <a class="nav" href="#user-center">个人中心</a>
+        <span class="username">
+          <i class="iconflore icon-people"></i>{{USER.userName}}
+          <div class="navs">
+            <a class="nav js-logout" href="javascript:;">退出</a>
+            <a class="nav" href="#user-center">个人中心</a>
+          </div>
+        </span>
+      {{else}}
+        <a href="javascript:;" class="js-login">登录</a>
+      {{/if}}
+    </div>
+  </div>
   <div class="body">
     {{#if DATA.length}}
       {{#each DATA}}
-        <a href='{{subject_url}}'>{{name}}</a>
+        <a href='{{subject_url}}' class="course-span">
+          <img src="{{subject_image}}" alt="">
+          <span>{{name}}</span>
+        </a>
       {{/each}}
     {{else}}
         暂无课程
     {{/if}}
   </div>
   <div class="footer">
-    <button class="js-login">登录</button>
+
   </div>
 </div>
