@@ -1,5 +1,7 @@
 const login = require('../templates/login/view.hbs');
 const welcome = require('../templates/welcome/view.hbs');
+const notfound = require('../templates/notfound/view.hbs');
+
 const getResource = require('./getResource');
 const Cookie = require('./cookie');
 
@@ -11,7 +13,9 @@ const {
 
 const renderHtmlJs = (templates, JsObj) => {
   $('#app').html(templates);
-  const jsobj = new JsObj({ router });
+  if (JsObj) {
+    const jsobj = new JsObj({ router });
+  }
 }
 
 const getUserBaseInfo = () => {
@@ -26,10 +30,13 @@ const router = (route) => {
   getResource(route || 'welcome').then((data, JsObj) => {
     switch (route) {
       case 'login':
-        renderHtmlJs(login({ DATA: data }), Login)
+        renderHtmlJs(notfund({ DATA: data, USER: getUserBaseInfo() }), Welcome);
+        break;
+      case 'welcome':
+        renderHtmlJs(login({ DATA: data }), Login);
         break;
       default:
-        renderHtmlJs(welcome({ DATA: data, USER: getUserBaseInfo() }), Welcome)
+        renderHtmlJs(notfound());
     }
   })
   .catch((error) => {

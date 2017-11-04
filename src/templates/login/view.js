@@ -19,6 +19,7 @@ class Login {
       success: (res) => {
         if (res.code === 1) {
           Cookie.set('username', res.user_name, 30, document.domain);
+          window.location.hash = 'user-center';
         } else {
           alert(res.msg);
         }

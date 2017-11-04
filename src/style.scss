@@ -1,6 +1,4 @@
 @import './theme/color.scss';
-@import './templates/login/view.scss';
-@import './templates/welcome/view.scss';
 
 body {
   margin: 0;
@@ -8,6 +6,7 @@ body {
   font-size: 0;
   background: #faf4eb;
   color: $color-text;
+  overflow: hidden;
 }
 
 @media all and (min-width: 376px) {
@@ -130,3 +129,7 @@ button {
     }
   }
 }
+
+@import './templates/login/view.scss';
+@import './templates/welcome/view.scss';
+@import './templates/notfound/view.scss';
