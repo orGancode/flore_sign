@@ -1,6 +1,8 @@
 const login = require('../templates/login/view.hbs');
 const welcome = require('../templates/welcome/view.hbs');
 const notfound = require('../templates/notfound/view.hbs');
+const userCenter = require('../templates/user_center/view.hbs');
+const signUp = require('../templates/sign_up/view.hbs');
 
 const getResource = require('./getResource');
 const Cookie = require('./cookie');
@@ -8,6 +10,7 @@ const Cookie = require('./cookie');
 const {
   Login,
   Welcome,
+  SignUp,
 } = require('./objects');
 // 路由跳转
 
@@ -28,12 +31,18 @@ const getUserBaseInfo = () => {
 const router = (route) => {
   window.location.hash = route;
   getResource(route || 'welcome').then((data, JsObj) => {
-    switch (route) {
+    switch (route || 'welcome') {
       case 'login':
-        renderHtmlJs(notfund({ DATA: data, USER: getUserBaseInfo() }), Welcome);
+        renderHtmlJs(login({ DATA: data }), Login);
+        break;
+      case 'sign-up':
+        renderHtmlJs(signUp({ DATA: data }), SignUp);
         break;
       case 'welcome':
-        renderHtmlJs(login({ DATA: data }), Login);
+        renderHtmlJs(welcome({ DATA: data, USER: getUserBaseInfo() }), Welcome);
+        break;
+      case 'user-center':
+        renderHtmlJs(userCenter({ DATA: data, USER: getUserBaseInfo() }));
         break;
       default:
         renderHtmlJs(notfound());

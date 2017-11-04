@@ -15,7 +15,7 @@ class Login {
     $.ajax({
       url: '/api/auth/login',
       data: JSON.stringify(data),
-      method: 'post',
+      type: 'POST',
       success: (res) => {
         if (res.code === 1) {
           Cookie.set('username', res.user_name, 30, document.domain);

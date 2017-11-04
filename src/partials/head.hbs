@@ -1,0 +1,22 @@
+<div class="head">
+    <a class="left" href='/'>
+      <h3>FLORE</h3>
+      <h4>弗洛法式甜点教室</h4>
+    </a>
+    <div class="right">
+      {{#if USER.isLogin}}
+        <a class="nav js-logout" href="javascript:;">退出</a>
+        <a class="nav" href="#user-center">个人中心</a>
+        <span class="username">
+          <i class="iconflore icon-people"></i>{{USER.userName}}
+          <div class="navs">
+            <a class="nav js-logout" href="javascript:;">退出</a>
+            <a class="nav" href="#user-center">个人中心</a>
+          </div>
+        </span>
+      {{else}}
+        <a href="javascript:;" class="js-login">登录</a>
+        <a href="#sign-up" class="js-sign-up">我要报名</a>
+      {{/if}}
+    </div>
+  </div>

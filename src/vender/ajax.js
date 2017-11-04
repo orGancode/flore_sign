@@ -1,5 +1,5 @@
 const Modal = require('./modal');
-const loginModalTemplate = require('../templates/login_modal/view.hbs');
+// const loginModalTemplate = require('../templates/login_modal/view.hbs');
 
 const ajaxModal = (title, content) => new Modal({
   icon: 'failure',
@@ -7,7 +7,7 @@ const ajaxModal = (title, content) => new Modal({
   content: content,
 }).show();
 
-const loginModal = () => new Modal(loginModalTemplate()).show();
+// const loginModal = () => new Modal(loginModalTemplate()).show();
 
 $.ajaxSetup({
   cache: false,

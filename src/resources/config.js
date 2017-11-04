@@ -1,5 +1,8 @@
 module.exports = {
-  welcome: {
+  'welcome': {
+    url: '/api/course/subject'
+  },
+  'sign-up': {
     url: '/api/course/subject'
   }
 }
