@@ -36,6 +36,8 @@ body {
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 2px;
+  display: inline-block;
+  font-size: 0.6rem;
   &:hover {
     border-color: #ccc;
     background: #dfdfdf;
@@ -48,6 +50,12 @@ body {
   &:hover {
     border-color: #ccc;
     background: rgb(104, 104, 214);;
+  }
+}
+.btn-secondary {
+  border: none;
+  &:hover {
+    border-color: #ccc;
   }
 }
 

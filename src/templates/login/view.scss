@@ -1,1 +1,44 @@
 
+.login-view {
+  .login-form {
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 12rem;
+    background: #314272;
+    border-radius: 0.2rem;
+    padding: 1rem 1.5rem;
+  }
+  .input-group {
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    label {
+      width: 3rem;
+      height: 1.5rem;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+      font-size: 0.6rem;
+      line-height: 1.5rem;
+    }
+    input {
+      height: 100%;
+      width: 7.5rem;
+      padding: 0 0.4rem;
+      border: 0;
+      outline: none;
+      border-radius: 0.2rem;
+    }
+  }
+  .btn-group {
+    text-align: right;
+    padding-top: 1rem;
+    .btn {
+      padding: 0.2rem 0.3rem;
+      vertical-align: top;
+    }
+    .btn + .btn {
+      margin-left: 1rem;
+    }
+  }
+}
