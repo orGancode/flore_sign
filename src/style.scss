@@ -202,6 +202,14 @@ button {
   }
 }
 
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
 
 @import './templates/login/view.scss';
 @import './templates/welcome/view.scss';
