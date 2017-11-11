@@ -1,23 +1,23 @@
 <div class="sign-up-view">
   {{> '../../partials/head.hbs'}}
-  <form class="body sign-up-form" id='sign-up-form'>
+  <form class="body form sign-up-form" id='sign-up-form'>
     <h1>欢迎报名<span>(备注：带<strong>*</strong>为必填项)</span></h1>
     <div class="input-group">
       <label for=""><span class="required">*</span>姓名</label>
       <div>
-        <input type="text" name="name" maxlength="20">
+        <input type="text" name="name" maxlength="20" required>
       </div>
     </div>
     <div class="input-group">
       <label for=""><span class="required">*</span>手机号</label>
       <div>
-        <input type="text" name="phone">
+        <input type="text" name="phone" maxlength="11" required>
       </div>
     </div>
     <div class="input-group">
       <label for=""><span class="required">*</span>课程</label>
       <div>
-        <select name="course_id" id="">
+        <select name="course_id" id="" required>
           {{#each DATA}}
             <option value="{{id}}">{{name}}</option>
           {{/each}}
@@ -27,7 +27,7 @@
     <div class="input-group">
       <label for=""><span class="required">*</span>微信号</label>
       <div>
-        <input type="text" name="wx" maxlength="30">
+        <input type="text" name="wx" maxlength="30" required>
       </div>
     </div>
     <div class="input-group">

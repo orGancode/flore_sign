@@ -15,6 +15,7 @@ class Modal {
     if (this.modalType === 'tipModal') {
       this.renderModal();
       $('body').append(this.modal);
+      $('.modal .modal-body').html(`<p>${this.content}</p>`)
       setTimeout(() => {
         // 绑定事件
         $('.js-confirm').on('click', e => {
@@ -47,7 +48,7 @@ class Modal {
           <div class="modal-head">
             <h3><i class='iconflore icon-${this.icon}'></i>${this.title}</h3>
           </div>
-          <div class="modal-body"><p>${this.content}</p></div>
+          <div class="modal-body"></div>
           <div class="modal-foot">
             ${this.isConfirm ? `<button class='btn js-close'>取消</button>` : ''}
             <button class='btn btn-primary js-confirm'>确认</button>

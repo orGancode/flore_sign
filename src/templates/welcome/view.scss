@@ -28,8 +28,9 @@
     top: 0.5rem;
     a, span {
       padding: 0 0.8rem;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       color: white;
+      font-weight: 100;
       line-height: 2.4rem;
     }
     span i {
@@ -39,18 +40,19 @@
     a:hover {
       background: $color-secondary;
     }
-    .js-login:hover {
+    .nav:hover {
       background: transparent;
     }
-    .js-sign-up:hover {
-      background: transparent;
+    .menu {
+      display: none;
     }
     .navs {
       height: 0;
       display: none;
       overflow: hidden;
       position: absolute;
-      width: 100%;
+      min-width: 100%;
+      white-space: nowrap;
       top: 2rem;
       border-radius: 5px;
       text-align: right;
@@ -58,11 +60,8 @@
       background: rgb(179, 178, 181);
       z-index: 1;
       transition: height 0.3s;
-      &.nav-open {
-        height: 3rem;
-      }
       a {
-        color: #666;
+        color: #fff;
         font-size: 0.6rem;
         line-height: 1.5rem;
         display: block;
@@ -118,7 +117,7 @@
     > .nav {
       display: none;
     }
-    .navs {
+    .navs, > .menu {
       display: initial;
     }
   }

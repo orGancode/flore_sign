@@ -1,5 +1,8 @@
 @import './theme/color.scss';
-
+html {
+  height: 100%;
+  overflow: auto;
+}
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +10,7 @@ body {
   font-size: 0;
   background: #faf4eb;
   color: $color-text;
+  min-height: 100%;
   overflow: auto;
   position: relative;
 }
@@ -209,9 +213,18 @@ button {
 .pull-right {
   float: right;
 }
+.form {
+  width: 70%;
+}
+@media all and (max-width: 414px) {
+  .form {
+    width: 98%;
+  }
+}
 
 
 @import './templates/login/view.scss';
 @import './templates/welcome/view.scss';
 @import './templates/notfound/view.scss';
 @import './templates/sign_up/view.scss';
+@import './templates/query_sign/view.scss';

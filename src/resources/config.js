@@ -1,8 +1,19 @@
 module.exports = {
+  /*
+    hash name: {
+      url: api url
+    },
+  */
   'welcome': {
-    url: '/api/course/subject'
+    type: 'get',
+    url: '/api/course/subject',
   },
   'sign-up': {
-    url: '/api/course/subject'
-  }
+    type: 'get',
+    url: '/api/course/subject',
+  },
+  'query': {
+    type: 'get',
+    url: '/api/course/subject',
+  },
 }

@@ -1,7 +1,7 @@
 const Modal = require('../../vender/modal');
 const Head = require('../head/view');
 
-class Welcome {
+class UserCenter {
   constructor(prop) {
     new Head();
     this.bindEvents();
@@ -13,4 +13,4 @@ class Welcome {
 
 }
 
-module.exports = Welcome;
+module.exports = UserCenter;

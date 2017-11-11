@@ -1,7 +1,9 @@
-const Cookie = require('../../script/cookie')
+const Cookie = require('../../script/cookie');
+const Head = require('../head/view');
+
 class Login {
   constructor(prop) {
-    this.router = prop.router;
+    new Head();
     this.bindEvents();
   }
 
@@ -21,7 +23,7 @@ class Login {
           Cookie.set('username', res.user_name, 30, document.domain);
           window.location.hash = 'user-center';
         } else {
-          alert(res.msg);
+          new Modal({ icon: 'failure', content: res.msg, title: '!oops' }).show();
         }
       },
     })

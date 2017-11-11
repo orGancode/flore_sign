@@ -1,8 +1,9 @@
 const Modal = require('../../vender/modal');
+const Head = require('../head/view');
 
 class SignUp {
   constructor(prop) {
-    this.router = prop.router;
+    new Head();
     this.bindEvents();
   }
 

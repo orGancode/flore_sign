@@ -2,7 +2,6 @@
   .sign-up-form {
     margin: 0 auto;
     margin-top: 1rem;
-    width: 70%;
     background: #314272;
     border-radius: 0.2rem;
     padding: 1rem 1.5rem;
@@ -59,11 +58,5 @@
     padding-left: 0.2rem;
     text-align: left;
     color: #999;
-  }
-}
-
-@media all and (max-width: 414px) {
-  .sign-up-view .sign-up-form {
-    width: 98%;
   }
 }

@@ -1,0 +1,28 @@
+.query-sign-view {
+  .query-sign-form {
+    .input-group {
+      text-align: center;
+      > label {
+        min-width: 5em;
+      }
+    }
+    margin: 0 auto;
+    margin-top: 1rem;
+    background: #314272;
+    border-radius: 0.2rem;
+    padding: 1rem 1.5rem;
+    > h1 {
+      font-size: 0.7rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      span {
+        font-size: 0.5rem;
+        padding-left: 1rem;
+        strong {
+          font-weight: normal;
+          color: #d3a471;
+        }
+      }
+    }
+  }
+}
