@@ -19,12 +19,8 @@ class Modal {
       setTimeout(() => {
         // 绑定事件
         $('.js-confirm').on('click', e => {
-          if (!this.isConfirm) {
-            this.close();
-          } else {
-            confirmCallback && confirmCallback();
-            this.close();
-          }
+          confirmCallback && confirmCallback();
+          this.close();
         });
         $('.js-close').on('click', e => {
           cancelCallback && cancelCallback();

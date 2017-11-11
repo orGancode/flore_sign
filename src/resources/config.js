@@ -16,4 +16,17 @@ module.exports = {
     type: 'get',
     url: '/api/course/subject',
   },
+  'update-sign': {
+    url: [
+      {
+        type: 'get',
+        url: '/api/course/subject'
+      },
+      {
+        type: 'get',
+        url: '/api/apply/query',
+        query: ['id', 'name', 'course_id', 'phone'],
+      }
+    ]
+  }
 }

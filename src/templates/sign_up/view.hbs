@@ -3,19 +3,19 @@
   <form class="body form sign-up-form" id='sign-up-form'>
     <h1>欢迎报名<span>(备注：带<strong>*</strong>为必填项)</span></h1>
     <div class="input-group">
-      <label for=""><span class="required">*</span>姓名</label>
+      <label for=""><span class="required">*</span>姓名：</label>
       <div>
         <input type="text" name="name" maxlength="20" required>
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>手机号</label>
+      <label for=""><span class="required">*</span>手机号：</label>
       <div>
         <input type="text" name="phone" maxlength="11" required>
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>课程</label>
+      <label for=""><span class="required">*</span>课程：</label>
       <div>
         <select name="course_id" id="" required>
           {{#each DATA}}
@@ -25,41 +25,41 @@
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>微信号</label>
+      <label for=""><span class="required">*</span>微信号：</label>
       <div>
         <input type="text" name="wx" maxlength="30" required>
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>微信支付截图</label>
+      <label for=""><span class="required">*</span>微信支付截图：</label>
       <div>
         <input type="file" name="pay_image">
         <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>身份证正面照</label>
+      <label for=""><span class="required">*</span>身份证正面照：</label>
       <div>
         <input type="file" name="card_image_front">
         <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>身份证背面照</label>
+      <label for=""><span class="required">*</span>身份证背面照：</label>
       <div>
         <input type="file" name="card_image_back">
         <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>是否有技能基础</label>
+      <label for=""><span class="required">*</span>是否有技能基础：</label>
       <div>
         <label for="have-base">有</label><input type="radio" id='have-base' name="base" value="true" checked>
         <label for="havent-base">无</label><input type="radio" id='havent-base' name="base" value="false">
       </div>
     </div>
     <div class="input-group">
-      <label for=""><span class="required">*</span>衣服尺寸</label>
+      <label for=""><span class="required">*</span>衣服尺寸：</label>
       <div>
         <select name="size" id="">
           <option value="XXXL">XXXL</option>
@@ -74,19 +74,19 @@
       </div>
     </div>
     <div class="input-group">
-      <label for="">微信名</label>
+      <label for="">微信名：</label>
       <div>
         <input type="text" name="wx_name" maxlength="30">
       </div>
     </div>
     <div class="input-group">
-      <label for="">QQ号</label>
+      <label for="">QQ号：</label>
       <div>
         <input type="number" name="qq">
       </div>
     </div>
     <div class="input-group">
-      <label for="">报名区域</label>
+      <label for="">报名区域：</label>
       <div>
         <input type="text" name="area">
       </div>

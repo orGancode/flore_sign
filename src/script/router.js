@@ -4,6 +4,7 @@ const notfound = require('../templates/notfound/view.hbs');
 const userCenter = require('../templates/user_center/view.hbs');
 const signUp = require('../templates/sign_up/view.hbs');
 const querySign = require('../templates/query_sign/view.hbs');
+const updateSign = require('../templates/update_sign/view.hbs');
 
 const getResource = require('./getResource');
 const Cookie = require('./cookie');
@@ -15,6 +16,7 @@ const {
   NotFound,
   UserCenter,
   QuerySign,
+  UpdateSign,
 } = require('./objects');
 // 路由跳转
 
@@ -35,7 +37,7 @@ const getUserBaseInfo = () => {
 const router = (route) => {
   window.location.hash = route;
   const pureRoute = (route || 'welcome').split('?')[0];
-  getResource(pureRoute).then((data, JsObj) => {
+  getResource(route).then((data, JsObj) => {
     switch (pureRoute) {
       case 'welcome':
         renderHtmlJs(welcome({ DATA: data, USER: getUserBaseInfo() }), Welcome);
@@ -48,6 +50,9 @@ const router = (route) => {
         break;
       case 'query':
         renderHtmlJs(querySign({ DATA: data, USER: getUserBaseInfo() }), QuerySign);
+        break;
+      case 'update-sign':
+        renderHtmlJs(updateSign({ SUBJECT: data[0], DATA: data[1], USER: getUserBaseInfo() }), UpdateSign);
         break;
       case 'user-center':
         renderHtmlJs(userCenter({ DATA: data, USER: getUserBaseInfo() }), UserCenter);
