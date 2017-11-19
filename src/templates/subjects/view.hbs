@@ -26,9 +26,8 @@
               <td>{{create_time}}</td>
               <td>{{#if create_user}}{{create_user}}{{else}}-{{/if}}</td>
               <td>
-                <a href="javascript:;">编辑</a>
-                <a href="javascript:;">结束</a>
-                <a href="javascript:;">删除</a>
+                <a href="javascript:;" class="js-edit-subject" data-info='{{tstring this}}'>编辑</a>
+                <a href="javascript:;" data-id='{{id}}' class="js-del-subject">删除</a>
               </td>
             </tr>
             {{/each}}

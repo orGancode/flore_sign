@@ -12,11 +12,13 @@ class Subjects {
 
   bindEvents() {
     $('.js-create-subject').on('click', e => this.popCreateForm(e));
+    $('.js-edit-subject').on('click', e => this.popCreateForm(e));
+    $('.js-del-subject').on('click', e => this.deleteSubject(e));
   }
 
   popCreateForm(e) {
-    new Modal(subjectForm()).show();
-    $('.subject-form').on('submit', e => this.submitCreateSubject(e));
+    new Modal(subjectForm({ data: $(e.currentTarget).data('info') })).show();
+    $('.subject-form').on('submit', e => this.submitSubject(e));
     $('.js-upload-file').on('click', e => this.triggerFileUpload(e));
     $('input[type="file"]').on('change', e => this.renderFileChange(e));
   }
@@ -55,29 +57,55 @@ class Subjects {
       tipModal('请填写课程称');
       return false;
     };
-    if (!formdata.get('subject_image').size) {
+    if (!formdata.get('subject_image').size && !formdata.get('subject_image')) {
       tipModal('请上传课程图片');
       return false;
     };
     return true;
   }
 
-  submitCreateSubject(e) {
+  submitSubject(e) {
     e.preventDefault();
     $(e.currentTarget).spin('small');
-
+    const id = $(e.currentTarget).data('id');
     const form = new FormData(document.getElementById('subject-form'));
     if (!this.checkFormValid(form)) {
       return;
     }
+    if (id && form.get('subject_image_file').size) {
+      form.set('subject_image', form.get('subject_image_file'));
+    }
+    form.delete('subject_image_file');
     $.ajax({
-      url: '/api/course/subject',
+      url: `/api/course/subject${id ? `/${id}` : ''}`,
       data: form,
       processData: false,
       contentType: false,
-      type: 'POST',
+      type: id ? 'PUT' : 'POST',
       success: (res) => {
         $(e.currentTarget).spin(false);
+        if (res.code === 1) {
+          window.location.reload();
+        } else {
+          new Modal({
+            icon: 'failure',
+            content: res.msg,
+            title: '错误'
+          }).show();
+        }
+      },
+      complete: () => $(e.currentTarget).spin(false),
+    })
+  }
+
+  deleteSubject(e) {
+    const id = $(e.currentTarget).data('id');
+    $('body').spin('small');
+    $.ajax({
+      url: `/api/course/subject/${id}`,
+      type: 'DELETE',
+      success: (res) => {
+        $('body').spin(false);
         if (res.code === 1) {
           window.location.reload();
         } else {
