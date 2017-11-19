@@ -1,0 +1,40 @@
+<div class="user-center">
+  {{> '../../partials/head/back_view.hbs'}}
+  <div class="body">
+    <div class="main-left">
+      {{> '../../partials/sidebar/view.hbs'}}
+    </div>
+    <div class="main-right">
+      <div class="content subject-manage">
+        <p class="bread-crumb">课程管理</p>
+        <div class="ops">
+          <a href="javascript:;" class='btn btn-primary js-create-subject'>创建课程</a>
+        </div>
+        <table class="table">
+          <thead>
+            <th>课程ID</th>
+            <th>课程名</th>
+            <th>创建时间</th>
+            <th>创建者</th>
+            <th>操作</th>
+          </thead>
+          <tbody>
+            {{#each DATA}}
+            <tr>
+              <td>{{id}}</td>
+              <td>{{name}}</td>
+              <td>{{create_time}}</td>
+              <td>{{#if create_user}}{{create_user}}{{else}}-{{/if}}</td>
+              <td>
+                <a href="javascript:;">编辑</a>
+                <a href="javascript:;">结束</a>
+                <a href="javascript:;">删除</a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

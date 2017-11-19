@@ -8,7 +8,7 @@ body {
   padding: 0;
   padding-bottom: 1rem;
   font-size: 0;
-  color: $color-text;
+  color: #333;
   min-height: 100%;
   overflow: auto;
   position: relative;
@@ -97,17 +97,22 @@ button {
   width: 100%;
   z-index: 9999;
   background: rgba(0,0,0,0.3);
-  .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -7.5rem;
-    margin-top: -3rem;
-    display: inline-block;
-    min-width: 15rem;
-    background: white;
-    color: #333;
-  }
+}
+.modal-loading {
+  color: white;
+  font-size: 12px;
+  line-height: 12px;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -7.5rem;
+  margin-top: -3rem;
+  display: inline-block;
+  min-width: 15rem;
+  background: white;
+  color: #333;
   .modal-head {
     padding: 0.5rem;
     border-bottom: 1px solid #ddd;
@@ -210,6 +215,18 @@ button {
   }
 }
 
+.pb-loading-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  overflow: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.9);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .input-group {
   height: 1.5rem;
   margin-bottom: 1rem;
@@ -278,6 +295,10 @@ button {
 
 .pull-right {
   float: right;
+}
+.clearfix{
+  content: '';
+  clear: both;
 }
 .form {
   width: 70%;

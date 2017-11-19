@@ -14,27 +14,30 @@ class Modal {
   show(confirmCallback, cancelCallback) {
     if (this.modalType === 'tipModal') {
       this.renderModal();
-      $('body').append(this.modal);
-      $('.modal .modal-body').html(`<p>${this.content}</p>`)
+      $('body').append($(this.modal));
       setTimeout(() => {
         // 绑定事件
         $('.js-confirm').on('click', e => {
           confirmCallback && confirmCallback();
-          this.close();
+          this.close(e);
         });
         $('.js-close').on('click', e => {
           cancelCallback && cancelCallback();
-          this.close();
+          this.close(e);
         });
       }, 0);
     } else {
       $('body').append(`<div class='modal-layer'>${this.modal}</div>`);
-      $('body').on('click', '.js-close', () => this.close());
+      $('body').on('click', '.js-close', (e) => this.close(e));
     }
   }
 
-  close() {
-    $('.modal-layer').remove();
+  close(e) {
+    if (e) {
+      $(e.currentTarget).closest('.modal-layer').remove();
+    } else {
+      $('#loading-modal').remove();
+    }
   }
 
   renderModal() {
@@ -44,7 +47,7 @@ class Modal {
           <div class="modal-head">
             <h3><i class='iconflore icon-${this.icon}'></i>${this.title}</h3>
           </div>
-          <div class="modal-body"></div>
+          <div class="modal-body">${this.content ? `<p>${this.content}</p>` : ''}</div>
           <div class="modal-foot">
             ${this.isConfirm ? `<button class='btn js-close'>取消</button>` : ''}
             <button class='btn btn-primary js-confirm'>确认</button>

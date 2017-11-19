@@ -5,6 +5,7 @@ const NotFound = require('../templates/notfound/view.js');
 const UserCenter = require('../templates/user_center/view.js');
 const QuerySign = require('../templates/query_sign/view.js');
 const UpdateSign = require('../templates/update_sign/view.js');
+const Subjects = require('../templates/subjects/view.js');
 const Users = require('../templates/users/view.js');
 
-module.exports = { Login, Welcome, SignUp, NotFound, UserCenter, QuerySign, UpdateSign, Users };
+module.exports = { Login, Welcome, SignUp, NotFound, UserCenter, QuerySign, UpdateSign, Users, Subjects };

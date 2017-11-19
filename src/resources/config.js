@@ -28,5 +28,9 @@ module.exports = {
         query: ['id', 'name', 'course_id', 'phone'],
       }
     ]
+  },
+  'subjects': {
+    type: 'get',
+    url: '/api/course/subject',
   }
 }

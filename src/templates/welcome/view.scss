@@ -1,6 +1,9 @@
 @import '../../theme/color.scss';
+.back_head {
+  min-width: 760px;
+}
 
-.head {
+.head, .back_head {
   background: $color-primary;
   width: 100%;
   box-sizing: border-box;
