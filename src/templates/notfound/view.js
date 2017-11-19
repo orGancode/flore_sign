@@ -1,8 +1,8 @@
-const Head = require('../head/view');
+const Head = require('../../partials/head/view');
 
 class NotFound {
   constructor(prop) {
-    new Head();
+    new Head()
   }
 }
 

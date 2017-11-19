@@ -1,16 +1,10 @@
 const Modal = require('../../vender/modal');
-const Head = require('../head/view');
+const Head = require('../../partials/head/view');
 
 class Welcome {
-  constructor(prop) {
+  constructor() {
     new Head();
-    this.bindEvents();
   }
-
-  bindEvents() {
-
-  }
-
 }
 
 module.exports = Welcome;

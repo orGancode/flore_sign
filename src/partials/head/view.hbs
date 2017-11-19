@@ -7,12 +7,14 @@
       {{#if USER.isLogin}}
         <a class="nav js-logout" href="javascript:;">退出</a>
         <a class="nav" href="#user-center">个人中心</a>
+        <a class="nav" href="#query">查询报名信息</a>
         <span class="nav-head">
           <i class="iconflore icon-people"></i>{{USER.userName}}
           <div class="navs">
             <a class="nav js-logout" href="javascript:;">退出</a>
             <a class="nav" href="#">首页</a>
             <a class="nav" href="#user-center">个人中心</a>
+            <a class="nav" href="#query">查询报名信息</a>
           </div>
         </span>
       {{else}}
@@ -25,7 +27,7 @@
             <a href="#login" class="nav js-login">登录</a>
             <a class="nav" href="#">首页</a>
             <a href="#sign-up" class="nav js-sign-up">我要报名</a>
-            <a href="#query" class="nav js-query">查询报名信息</a>
+            <a href="#query" class="nav">查询报名信息</a>
           </div>
         </span>
 

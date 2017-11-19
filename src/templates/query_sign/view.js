@@ -1,9 +1,9 @@
-const Head = require('../head/view');
+const Head = require('../../partials/head/view');
 const Modal = require('../../vender/modal');
 
 class QuerySign {
   constructor(prop) {
-    new Head();
+    new Head()
     this.bindEvents();
   }
 

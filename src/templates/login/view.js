@@ -1,5 +1,5 @@
 const Cookie = require('../../script/cookie');
-const Head = require('../head/view');
+const Head = require('../../partials/head/view');
 
 class Login {
   constructor(prop) {
