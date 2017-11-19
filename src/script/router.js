@@ -5,6 +5,7 @@ const userCenter = require('../templates/user_center/view.hbs');
 const signUp = require('../templates/sign_up/view.hbs');
 const querySign = require('../templates/query_sign/view.hbs');
 const updateSign = require('../templates/update_sign/view.hbs');
+const users = require('../templates/users/view.hbs');
 
 const getResource = require('./getResource');
 const Cookie = require('./cookie');
@@ -17,6 +18,7 @@ const {
   UserCenter,
   QuerySign,
   UpdateSign,
+  Users
 } = require('./objects');
 // 路由跳转
 
@@ -56,6 +58,9 @@ const router = (route) => {
         break;
       case 'user-center':
         renderHtmlJs(userCenter({ DATA: data, USER: getUserBaseInfo() }), UserCenter);
+        break;
+      case 'users':
+        renderHtmlJs(users({ DATA: data, USER: getUserBaseInfo() }), Users);
         break;
       default:
         renderHtmlJs(notfound({ USER: getUserBaseInfo() }), NotFound);
