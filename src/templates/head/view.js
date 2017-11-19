@@ -29,7 +29,7 @@ class Head {
       $.ajax({
         url: '/api/auth/logout',
         success: () => {
-          window.location.reload();
+          window.location.href = '/';
         },
       })
     })
