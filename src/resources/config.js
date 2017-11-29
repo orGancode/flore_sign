@@ -32,5 +32,19 @@ module.exports = {
   'subjects': {
     type: 'get',
     url: '/api/course/subject',
+  },
+  'courses': {
+    url: [
+      {
+        type: 'get',
+        url: '/api/course/course',
+        query: ['subject_id']
+      },
+      {
+        type: 'get',
+        url: '/api/course/subject',
+      }
+    ]
+
   }
 }

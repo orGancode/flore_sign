@@ -1,41 +1,6 @@
 @import '../../theme/color.scss';
 
 .subject-manage {
-  .table {
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 14px;
-    border: 1px solid #E1E6EB;
-    border-left: none;
-    thead th {
-      line-height: 20px;
-      padding: 8px 12px;
-      border-bottom: 1px solid #E1E6EB;
-      border-left: 1px solid #E1E6EB;
-      white-space:  nowrap;
-      text-align: center;
-      font-weight: normal !important;
-      letter-spacing: 1px;
-      background: #d6d9e044;
-    }
-    tbody tr:hover {
-      background: #f1f3f755;
-    }
-    tbody td {
-      text-align:  center;
-      line-height: 20px;
-      padding: 8px 10px;
-      font-size: 13px;
-      border-bottom: 1px solid #E1E6EB;
-      border-left: 1px solid #E1E6EB;
-    }
-    a {
-      color: $color-link;
-      &:hover {
-        color: $color-link-hover;
-      }
-    }
-  }
   .bread-crumb {
     font-size: 12px;
     padding-left: 10px;

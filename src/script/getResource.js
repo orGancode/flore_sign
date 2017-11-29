@@ -2,7 +2,7 @@ const resource = require('../resources/config');
 const Promise = require("bluebird");
 
 const getUrlQuery = (configQuery) => {
-  const params = location.hash.split('?')[1];
+  const params = location.href.split('?')[1];
   const paramsArr = [];
   if (params) {
     params.split('&').forEach((param) => {
@@ -21,6 +21,7 @@ const fetchApi = (config, res, rej) => {
   $.ajax({
     url: `${url}${paramsString ? `?${paramsString}` : ''}`,
     type: config.type || 'get',
+    cache: !!config.cache,
     success: (data) => {
       res(data);
     }

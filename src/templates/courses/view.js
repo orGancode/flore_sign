@@ -2,8 +2,8 @@ require('./view.scss');
 const Modal = require('../../vender/modal');
 const Head = require('../../partials/head/view');
 const SideBar = require('../../partials/sidebar/view');
-const subjectForm = require('./modals/create_form.hbs');
-class Subjects {
+const coursesForm = require('./modals/create_form.hbs');
+class Courses {
   constructor(prop) {
     new Head();
     new SideBar();
@@ -11,16 +11,31 @@ class Subjects {
   }
 
   bindEvents() {
-    $('.js-create-subject').on('click', e => this.popCreateForm(e));
-    $('.js-edit-subject').on('click', e => this.popCreateForm(e));
-    $('.js-del-subject').on('click', e => {
-      new Modal({
-        icon: 'warning',
-        title: '删除？',
-        content: '是否删除该科目',
-        isConfirm: true,
-      }).show(() => this.deleteSubject(e));
-    });
+    $('.filter-form').on('submit', e => this.submitSearch(e));
+    $('.js-reset-search').on('click', () => this.resetSearch());
+  }
+
+  submitSearch(e) {
+    e.preventDefault();
+    const data = $(e.currentTarget).serializeJson();
+    const params = [];
+    for(let i in data) {
+      if (data[i]) {
+        params.push(`${i}=${data[i]}`);
+      }
+    }
+    if (params.length) {
+      if (location.href.indexOf('?') > -1) {
+        location.href = location.href.split('?')[0] + `?${params.join('&')}`;
+      } else {
+        location.href += `?${params.join('&')}`;
+      }
+    }
+  }
+
+  resetSearch() {
+    location.href = location.href.split('?')[0];
+    location.reload();
   }
 
   popCreateForm(e) {
@@ -61,11 +76,11 @@ class Subjects {
       }).show();
     }
     if (!formdata.get('name')) {
-      tipModal('请填写科目称');
+      tipModal('请填写课程称');
       return false;
     };
     if (!formdata.get('subject_image').size && !formdata.get('subject_image_file')) {
-      tipModal('请上传科目图片');
+      tipModal('请上传课程图片');
       return false;
     };
     return true;
@@ -128,4 +143,4 @@ class Subjects {
 
 }
 
-module.exports = Subjects;
+module.exports = Courses;

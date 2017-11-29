@@ -7,5 +7,17 @@ const QuerySign = require('../templates/query_sign/view.js');
 const UpdateSign = require('../templates/update_sign/view.js');
 const Subjects = require('../templates/subjects/view.js');
 const Users = require('../templates/users/view.js');
+const Courses = require('../templates/courses/view.js');
 
-module.exports = { Login, Welcome, SignUp, NotFound, UserCenter, QuerySign, UpdateSign, Users, Subjects };
+module.exports = {
+  Login,
+  Welcome,
+  SignUp,
+  NotFound,
+  UserCenter,
+  QuerySign,
+  UpdateSign,
+  Users,
+  Subjects,
+  Courses,
+};

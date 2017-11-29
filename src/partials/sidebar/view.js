@@ -9,7 +9,7 @@ class SideBar {
   }
 
   initSidebar() {
-    const hash = location.hash ? location.hash.slice(1) : '';
+    const hash = location.hash ? location.hash.slice(1).split('?')[0] : '';
     if (!hash) return;
     $('.sidebar li').each((index, ele) => {
       const aEle = $(ele).find('a');

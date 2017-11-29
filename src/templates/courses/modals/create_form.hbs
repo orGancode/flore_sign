@@ -1,24 +1,24 @@
 <div class="modal create-subject">
   <div class="modal-head">
-    <h3>创建科目</h3>
+    <h3>创建课程</h3>
   </div>
   <div class="modal-body">
     <form class="form subject-form" id='subject-form' data-id='{{data.id}}'>
       <span>备注：带<strong>*</strong>为必填项</span>
       <div class="input-group">
-        <label for=""><span class="required">*</span>科目名称：</label>
+        <label for=""><span class="required">*</span>课程名称：</label>
         <div>
           <input type="text" name="name" maxlength="20" value="{{data.name}}" required>
         </div>
       </div>
       <div class="input-group">
-        <label for=""><span class="required">*</span>科目链接：</label>
+        <label for=""><span class="required">*</span>课程链接：</label>
         <div>
           <input type="text" name="subject_url" value="{{data.subject_url}}" required>
         </div>
       </div>
       <div class="input-group">
-        <label for=""><span class="required">*</span>科目图片：</label>
+        <label for=""><span class="required">*</span>课程图片：</label>
         <div>
           {{#if data}}
             <input type="file" name="subject_image_file">
