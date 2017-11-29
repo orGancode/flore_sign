@@ -43,7 +43,7 @@ class Modal {
   renderModal() {
     this.modal = `
       <div class='modal-layer'>
-        <div class='modal'>
+        <div class='modal tip-modal'>
           <div class="modal-head">
             <h3><i class='iconflore icon-${this.icon}'></i>${this.title}</h3>
           </div>

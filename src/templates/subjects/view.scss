@@ -70,7 +70,12 @@
     }
   }
   .js-upload-file {
-    margin-top: 5px;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    img {
+      height: 100%;
+    }
   }
   .input-group {
     text-align: center;

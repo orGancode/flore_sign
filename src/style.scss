@@ -113,6 +113,11 @@ button {
   min-width: 15rem;
   background: white;
   color: #333;
+  &.tip-modal {
+    min-width: auto;
+    width: 10rem;
+    left: calc(50% + 2.5rem);
+  }
   .modal-head {
     padding: 0.5rem;
     border-bottom: 1px solid #ddd;

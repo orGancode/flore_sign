@@ -13,7 +13,14 @@ class Subjects {
   bindEvents() {
     $('.js-create-subject').on('click', e => this.popCreateForm(e));
     $('.js-edit-subject').on('click', e => this.popCreateForm(e));
-    $('.js-del-subject').on('click', e => this.deleteSubject(e));
+    $('.js-del-subject').on('click', e => {
+      new Modal({
+        icon: 'warning',
+        title: '删除？',
+        content: '是否删除该课程',
+        isConfirm: true,
+      }).show(() => this.deleteSubject(e));
+    });
   }
 
   popCreateForm(e) {
@@ -57,7 +64,7 @@ class Subjects {
       tipModal('请填写课程称');
       return false;
     };
-    if (!formdata.get('subject_image').size && !formdata.get('subject_image')) {
+    if (!formdata.get('subject_image').size && !formdata.get('subject_image_file')) {
       tipModal('请上传课程图片');
       return false;
     };
@@ -66,12 +73,12 @@ class Subjects {
 
   submitSubject(e) {
     e.preventDefault();
-    $(e.currentTarget).spin('small');
     const id = $(e.currentTarget).data('id');
     const form = new FormData(document.getElementById('subject-form'));
     if (!this.checkFormValid(form)) {
       return;
     }
+    $(e.currentTarget).spin('small');
     if (id && form.get('subject_image_file').size) {
       form.set('subject_image', form.get('subject_image_file'));
     }
