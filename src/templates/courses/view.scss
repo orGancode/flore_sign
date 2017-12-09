@@ -1,4 +1,12 @@
 @import '../../theme/color.scss';
+.filter-form .select {
+  font-size: 0;
+  select {
+    -webkit-appearance: none;
+    background: transparent;
+    padding: 0 5px;
+  }
+}
 .course-manage {
   .bread-crumb {
     font-size: 12px;
@@ -41,4 +49,45 @@
       margin-left: 20px;
     }
   }
+}
+.modal.create-course {
+  top: 30%;
+  .form {
+    >span {
+      color: #999;
+      font-size: 12px;
+    }
+    label {
+      font-weight: 200;
+      color: #333;
+    }
+    margin: 0 auto;
+    width: auto;
+    input {
+      border-bottom: 0.5px solid #999;
+    }
+  }
+  .js-upload-file {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    line-height: 1.5rem;
+    img {
+      height: 100%;
+    }
+  }
+  .input-group {
+    margin-bottom: 0.2rem;
+    > label {
+      min-width: 6em;
+    }
+    .radio label {
+      padding: 0 0.5em;
+      line-height: 1.5rem;
+    }
+  }
+}
+.table-container {
+  width: 100%;
+  overflow: auto;
 }

@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   padding-bottom: 1rem;
-  font-size: 0;
+  font-size: 20px;
   color: #333;
   min-height: 100%;
   overflow: auto;
@@ -236,7 +236,6 @@ button {
   height: 1.5rem;
   margin-bottom: 1rem;
   >label {
-    min-width: 4em;
     display: inline-block;
     vertical-align: middle;
     text-align: right;
@@ -349,6 +348,19 @@ button {
       color: $color-link-hover;
     }
   }
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:#ccc;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:#ccc;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:#ccc;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:#ccc;
 }
 
 
