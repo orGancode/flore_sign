@@ -21,16 +21,16 @@
         <label for=""><span class="required">*</span>科目图片：</label>
         <div>
           {{#if data}}
-            <input type="file" name="subject_image_file">
             {{#if data.subject_image}}
               <input type="hidden" name="subject_image" value="{{data.subject_image}}">
               <a href='javascript:;' class="btn btn-secondary js-upload-file"><img src="{{data.subject_image}}" alt="{{data.subject_image}}"></a>
             {{else}}
               <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
             {{/if}}
+            <input type="file" name="subject_image_file">
           {{else}}
-            <input type="file" name="subject_image">
             <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
+            <input type="file" name="subject_image">
           {{/if}}
         </div>
       </div>
