@@ -8,6 +8,8 @@ const UpdateSign = require('../templates/update_sign/view.js');
 const Subjects = require('../templates/subjects/view.js');
 const Users = require('../templates/users/view.js');
 const Courses = require('../templates/courses/view.js');
+const Students = require('../templates/students/view.js');
+const StudentEdit = require('../templates/student_edit/view.js');
 
 module.exports = {
   Login,
@@ -20,4 +22,6 @@ module.exports = {
   Users,
   Subjects,
   Courses,
+  Students,
+  StudentEdit,
 };

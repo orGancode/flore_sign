@@ -1,0 +1,13 @@
+@import '../../theme/color.scss';
+
+.students-manage {
+  .bread-crumb {
+    font-size: 12px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    line-height: 30px;
+    border-left: 3px solid $color-primary;
+    background: #f5f5f5;
+  }
+}
+

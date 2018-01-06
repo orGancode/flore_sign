@@ -1,0 +1,43 @@
+<div class="user-center">
+  {{> '../../partials/head/back_view.hbs'}}
+  <div class="body">
+    <div class="main-left">
+      {{> '../../partials/sidebar/view.hbs'}}
+    </div>
+    <div class="main-right">
+      <div class="content students-manage">
+        <input type="hidden" name="subjects" data-subjects="{{tstring SUBJECT}}">
+        <p class="bread-crumb">学员管理</p>
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <th>学员ID</th>
+              <th>学员姓名</th>
+              <th>电话</th>
+              <th>QQ</th>
+              <th>微信号</th>
+              <th>创建时间</th>
+              <th>操作</th>
+            </thead>
+            <tbody>
+              {{#each DATA}}
+              <tr>
+                <td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{safeEmpty phone}}</td>
+                <td>{{safeEmpty qq}}</td>
+                <td>{{safeEmpty wx_name}}</td>
+                <td>{{create_time}}</td>
+                <td>
+                  <a href="#students-edit?id={{id}}" class="js-edit-student" data-info='{{tstring this}}'>编辑</a>
+                  <a href="javascript:;" data-id='{{id}}' class="js-del-student">删除</a>
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,22 +8,13 @@ const updateSign = require('../templates/update_sign/view.hbs');
 const subjects = require('../templates/subjects/view.hbs');
 const users = require('../templates/users/view.hbs');
 const courses = require('../templates/courses/view.hbs');
+const students = require('../templates/students/view.hbs');
+const student_edit = require('../templates/student_edit/view.hbs');
 
 const getResource = require('./getResource');
 const Cookie = require('./cookie');
 
-const {
-  Login,
-  Welcome,
-  SignUp,
-  NotFound,
-  UserCenter,
-  QuerySign,
-  UpdateSign,
-  Users,
-  Subjects,
-  Courses,
-} = require('./objects');
+const PagesObject = require('./objects');
 // 路由跳转
 
 const renderHtmlJs = (templates, data, JsObj) => {
@@ -65,34 +56,40 @@ const router = (route) => {
   getResource(route).then((data, JsObj) => {
     switch (pureRoute) {
       case 'welcome':
-        renderHtmlJs(welcome, { DATA: data, USER: getUserBaseInfo() }, Welcome);
+        renderHtmlJs(welcome, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Welcome);
         break;
       case 'login':
-        renderHtmlJs(login, { DATA: data }, Login);
+        renderHtmlJs(login, { DATA: data }, PagesObject.Login);
         break;
       case 'sign-up':
-        renderHtmlJs(signUp, { DATA: data }, SignUp);
+        renderHtmlJs(signUp, { DATA: data }, PagesObject.SignUp);
         break;
       case 'query':
-        renderHtmlJs(querySign, { DATA: data, USER: getUserBaseInfo() }, QuerySign);
+        renderHtmlJs(querySign, { DATA: data, USER: getUserBaseInfo() }, PagesObject.QuerySign);
         break;
       case 'update-sign':
-        renderHtmlJs(updateSign, { SUBJECT: data[0], DATA: data[1], USER: getUserBaseInfo() }, UpdateSign);
+        renderHtmlJs(updateSign, { SUBJECT: data[0], DATA: data[1], USER: getUserBaseInfo() }, PagesObject.UpdateSign);
         break;
       case 'user-center':
-        renderHtmlJs(userCenter, { DATA: data, USER: getUserBaseInfo() }, UserCenter);
+        renderHtmlJs(userCenter, { DATA: data, USER: getUserBaseInfo() }, PagesObject.UserCenter);
         break;
       case 'subjects':
-        renderHtmlJs(subjects, { DATA: data, USER: getUserBaseInfo() }, Subjects);
+        renderHtmlJs(subjects, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Subjects);
         break;
       case 'courses':
-        renderHtmlJs(courses, { DATA: data[0], SUBJECT: data[1], USER: getUserBaseInfo() }, Courses);
+        renderHtmlJs(courses, { DATA: data[0], SUBJECT: data[1], USER: getUserBaseInfo() }, PagesObject.Courses);
         break;
       case 'users':
-        renderHtmlJs(users, { DATA: data, USER: getUserBaseInfo() }, Users);
+        renderHtmlJs(users, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Users);
+        break;
+      case 'students':
+        renderHtmlJs(students, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Students);
+        break;
+      case 'students-edit':
+        renderHtmlJs(student_edit, { SUBJECT: data[0], DATA: data[1], USER: getUserBaseInfo() }, PagesObject.StudentEdit);
         break;
       default:
-        renderHtmlJs(notfound, { USER: getUserBaseInfo() }, NotFound);
+        renderHtmlJs(notfound, { USER: getUserBaseInfo() }, PagesObject.NotFound);
     }
   })
   .catch((error) => {

@@ -45,6 +45,22 @@ module.exports = {
         url: '/api/course/subject',
       }
     ]
-
-  }
+  },
+  'students': {
+    type: 'get',
+    url: '/api/course/student',
+  },
+  'students-edit': {
+    url: [
+      {
+        type: 'get',
+        url: '/api/course/subject'
+      },
+      {
+        type: 'get',
+        url: '/api/apply/query',
+        query: ['id'],
+      }
+    ]
+  },
 }

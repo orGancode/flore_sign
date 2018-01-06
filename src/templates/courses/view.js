@@ -16,7 +16,7 @@ class Courses {
     $('.js-reset-search').on('click', () => this.resetSearch());
     $('.js-create-course').on('click', e => this.popCreateForm(e));
     $('.js-edit-course').on('click', e => this.popCreateForm(e));
-    $('.js-del-scurse').on('click', e => this.deleteCourse(e));
+    $('.js-del-course').on('click', e => this.deleteCourse(e));
 
   }
 

@@ -3,6 +3,8 @@ require('./view.scss');
 class DateSelect {
   constructor(prop) {
     this.el = prop.el;
+    this.beginYear = prop.beginYear || 2000;
+    this.yearRange = prop.range || 30;
     this.bindEvents();
     this.initDateSelect(prop);
   }
@@ -22,7 +24,7 @@ class DateSelect {
       const year = date.getFullYear();
       const month = date.getMonth() + 1;
       const day = date.getDate();
-      this.renderYear(1990, 30, year);
+      this.renderYear(this.beginYear, this.yearRange, year);
       this.renderMonth(month);
       this.renderDay(year, month, day);
     } else {
@@ -30,7 +32,7 @@ class DateSelect {
       const nowYear = nowTime.getFullYear();
       const nowMonth = nowTime.getMonth() + 1;
       const nowDay = nowTime.getDate();
-      this.renderYear(1990, 30, nowYear);
+      this.renderYear(this.beginYear, this.yearRange, nowYear);
       this.renderMonth(nowMonth);
       this.renderDay(nowYear, nowMonth, nowDay);
     }

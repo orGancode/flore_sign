@@ -13,7 +13,7 @@ class SideBar {
     if (!hash) return;
     $('.sidebar li').each((index, ele) => {
       const aEle = $(ele).find('a');
-      if (aEle.data('href') === hash) {
+      if (hash.indexOf(aEle.data('href')) > -1) {
         $('.sidebar li').removeClass('active');
         $(ele).addClass('active');
         $(ele).parent().closest('li').addClass('open');

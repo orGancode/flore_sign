@@ -1,0 +1,125 @@
+<div class="user-center">
+  {{> '../../partials/head/back_view.hbs'}}
+  <div class="body">
+    <div class="main-left">
+      {{> '../../partials/sidebar/view.hbs'}}
+    </div>
+    <div class="main-right">
+      <div class="content students-manage">
+        <p class="bread-crumb">学员详情</p>
+        <div class="table-container sign-up-view">
+          <form class="body form sign-up-form" id='sign-up-form'>
+            <h1>报名信息<span>(备注：带<strong>*</strong>为必填项)</span></h1>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>姓名：</label>
+              <div>
+                <input type="text" name="name" maxlength="20" required value={{DATA.data.name}} >
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>手机号：</label>
+              <div>
+                <input type="text" name="phone" maxlength="11" required value={{DATA.data.phone}}>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>课程：</label>
+              <div>
+                <select name="course_id" id="" required>
+                  {{#each SUBJECT}}
+                    <option value="{{id}}" {{getSelected ../DATA.data.course_id id}}>{{name}}</option>
+                  {{/each}}
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>微信号：</label>
+              <div>
+                <input type="text" name="wx" maxlength="30" required value={{DATA.data.wx}}>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>微信支付截图：</label>
+              <div>
+                <input type="file" name="pay_image_file">
+                {{#if DATA.data.pay_image}}
+                  <input type="hidden" name="pay_image" value="{{DATA.data.pay_image}}">
+                  <a href='javascript:;' class="btn btn-secondary js-upload-file"><img src="{{DATA.data.pay_image}}" alt="{{DATA.data.pay_image}}"></a>
+                {{else}}
+                  <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
+                {{/if}}
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>身份证正面照：</label>
+              <div>
+                <input type="file" name="card_image_front_file">
+                {{#if DATA.data.card_image_front}}
+                  <input type="hidden" name="card_image_front" value="{{DATA.data.card_image_front}}">
+                  <a href='javascript:;' class="btn btn-secondary js-upload-file"><img src="{{DATA.data.card_image_front}}" alt=""></a>
+                {{else}}
+                  <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
+                {{/if}}
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>身份证背面照：</label>
+              <div>
+                <input type="file" name="card_image_back_file">
+                {{#if DATA.data.card_image_back}}
+                  <input type="hidden" name="card_image_back" value="{{DATA.data.card_image_back}}">
+                  <a href='javascript:;' class="btn btn-secondary js-upload-file"><img src="{{DATA.data.card_image_back}}" alt=""></a>
+                {{else}}
+                  <a href='javascript:;' class="btn btn-secondary js-upload-file">点击上传文件</a>
+                {{/if}}
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>是否有技能基础：</label>
+              <div>
+                <label for="havent-base">无</label><input type="radio" id='havent-base' name="base" value="false" {{#unless DATA.data.base}}checked{{/unless}}>
+                <label for="have-base">有</label><input type="radio" id='have-base' name="base" value="true" {{#if DATA.data.base}}checked{{/if}}>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for=""><span class="required">*</span>衣服尺寸：</label>
+              <div>
+                <select name="size" id="">
+                  <option value="XXXL" {{getSelected DATA.data.size 'XXXL'}}>XXXL</option>
+                  <option value="XXL" {{getSelected DATA.data.size 'XXL'}}>XXL</option>
+                  <option value="XL" {{getSelected DATA.data.size 'XL'}}>XL</option>
+                  <option value="L" {{getSelected DATA.data.size 'L'}}>L</option>
+                  <option value="M" {{getSelected DATA.data.size 'M'}}>M</option>
+                  <option value="S" {{getSelected DATA.data.size 'S'}}>S</option>
+                  <option value="XS" {{getSelected DATA.data.size 'XS'}}>XS</option>
+                  <option value="XXS" {{getSelected DATA.data.size 'XXS'}}>XXS</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="">微信名：</label>
+              <div>
+                <input type="text" name="wx_name" maxlength="30" value={{DATA.data.wx_name}}>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="">QQ号：</label>
+              <div>
+                <input type="number" name="qq" value={{DATA.data.qq}}>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="">报名区域：</label>
+              <div>
+                <input type="text" name="area" value={{DATA.data.area}}>
+              </div>
+            </div>
+            <div class="btn-group">
+              <input class="btn btn-primary" type="submit" value="保存">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
