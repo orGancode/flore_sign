@@ -1,0 +1,24 @@
+<div class="modal create-group">
+  <div class="modal-head">
+    <h3>{{#if id}}编辑{{else}}创建{{/if}}用户组</h3>
+  </div>
+  <div class="modal-body">
+    <form class="form group-form" id='group-form' data-id='{{id}}'>
+      <span>备注：带<strong>*</strong>为必填项</span>
+      <div class="input-group">
+        <label for=""><span class="required">*</span>用户组名称：</label>
+        <div>
+          <input type="text" name="name" required minlength="2" placeholder="请输入名称" value={{name}} >
+        </div>
+      </div>
+      <div class="input-group">
+        <label for=""><span class="required">*</span>用户组描述：</label>
+        <textarea class="des-area" name="description" cols="3" required minlength="5" maxlength="200" placeholder="请输入描述，5-200个字符">{{description}}</textarea>
+      </div>
+      <div class="btn-group">
+        <a href="javascript:;" class="btn btn-info js-close">取消</a>
+        <button type="submit" class="btn btn-primary">提交</button>
+      </div>
+    </form>
+  </div>
+</div>
