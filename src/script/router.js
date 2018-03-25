@@ -7,6 +7,7 @@ const querySign = require('../templates/query_sign/view.hbs');
 const updateSign = require('../templates/update_sign/view.hbs');
 const subjects = require('../templates/subjects/view.hbs');
 const userGroups = require('../templates/user-groups/view.hbs');
+const pwdUpdate = require('../templates/update-password/view.hbs');
 const courses = require('../templates/courses/view.hbs');
 const students = require('../templates/students/view.hbs');
 const student_edit = require('../templates/student_edit/view.hbs');
@@ -81,6 +82,9 @@ const router = (route) => {
         break;
       case 'user-groups':
         renderHtmlJs(userGroups, { DATA: data, USER: getUserBaseInfo() }, PagesObject.UserGroups);
+        break;
+      case 'update-password':
+        renderHtmlJs(pwdUpdate, { USER: getUserBaseInfo() }, PagesObject.PwdUpdate);
         break;
       case 'students':
         renderHtmlJs(students, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Students);

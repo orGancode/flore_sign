@@ -1,5 +1,6 @@
 const Cookie = require('../../script/cookie');
 const Head = require('../../partials/head/view');
+const Modal = require('../../vender/modal');
 
 class Login {
   constructor(prop) {
@@ -26,6 +27,9 @@ class Login {
           new Modal({ icon: 'failure', content: res.msg, title: '!oops' }).show();
         }
       },
+      error: (err) => {
+        new Modal({ icon: 'failure', content: err.msg, title: '!oops' }).show();
+      }
     })
   }
 }

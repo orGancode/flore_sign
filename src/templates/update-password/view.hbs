@@ -1,0 +1,38 @@
+<div class="user-center">
+  {{> '../../partials/head/view.hbs'}}
+  <div class="body">
+    <div class="main-left">
+      {{> '../../partials/sidebar/view.hbs'}}
+    </div>
+    <div class="main-right">
+      <div class="content update-password">
+        <p class="bread-crumb">修改密码</p>
+        <form class="form" id='pwd-update-form'>
+          <h1>修改密码</h1>
+          <div class="input-group">
+            <label for=""><span class="required">*</span>旧密码：</label>
+            <div>
+              <input type="password" name="oldp" required minlength="6" placeholder="请输入旧密码">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for=""><span class="required">*</span>新密码：</label>
+            <div>
+              <input type="password" name="newp" required minlength="6" placeholder="请输入新密码">
+            </div>
+          </div>
+          <div class="input-group">
+            <label for=""><span class="required">*</span>确认密码：</label>
+            <div>
+              <input type="password" name="confirmp" required minlength="6" placeholder="请再次输入密码">
+            </div>
+          </div>
+          <div class="btn-group">
+            <input class="btn btn-primary" type="submit" value="提交">
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
