@@ -341,6 +341,9 @@ button {
     font-size: 13px;
     border-bottom: 1px solid #E1E6EB;
     border-left: 1px solid #E1E6EB;
+    a {
+      display: inline-block;
+    }
   }
   a {
     color: $color-link;
@@ -363,6 +366,14 @@ button {
   color:#ccc;
 }
 
+.bread-crumb {
+  font-size: 12px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  border-left: 3px solid $color-primary;
+  background: #f5f5f5;
+}
 
 @import './templates/login/view.scss';
 @import './templates/welcome/view.scss';

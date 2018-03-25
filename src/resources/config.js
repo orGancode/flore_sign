@@ -63,4 +63,8 @@ module.exports = {
       }
     ]
   },
+  'user-groups': {
+    type: 'get',
+    url: '/api/auth/roles'
+  },
 }

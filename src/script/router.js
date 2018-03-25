@@ -6,7 +6,7 @@ const signUp = require('../templates/sign_up/view.hbs');
 const querySign = require('../templates/query_sign/view.hbs');
 const updateSign = require('../templates/update_sign/view.hbs');
 const subjects = require('../templates/subjects/view.hbs');
-const users = require('../templates/users/view.hbs');
+const userGroups = require('../templates/user-groups/view.hbs');
 const courses = require('../templates/courses/view.hbs');
 const students = require('../templates/students/view.hbs');
 const student_edit = require('../templates/student_edit/view.hbs');
@@ -79,8 +79,8 @@ const router = (route) => {
       case 'courses':
         renderHtmlJs(courses, { DATA: data[0], SUBJECT: data[1], USER: getUserBaseInfo() }, PagesObject.Courses);
         break;
-      case 'users':
-        renderHtmlJs(users, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Users);
+      case 'user-groups':
+        renderHtmlJs(userGroups, { DATA: data, USER: getUserBaseInfo() }, PagesObject.UserGroups);
         break;
       case 'students':
         renderHtmlJs(students, { DATA: data, USER: getUserBaseInfo() }, PagesObject.Students);
